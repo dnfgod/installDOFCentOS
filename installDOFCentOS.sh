@@ -7,8 +7,8 @@
 #
 
 function install() {
-    echo "腾讯云的朋友，可以一试，确定按照这里的操作无误，还是无法成功，另找他法吧"
-    read -p "输入centOS版本，例如5.11，输入5，然后回车：" versionNumber
+    echo "欢迎使用创神一条龙云命令，腾讯云的朋友，可以一试，确定按照这里的操作无误，还是无法成功，另找他法吧"
+    read -p "创神云命令。维护QQ1805037552.请输入centOS版本，例如5.11，输入5，然后回车：" versionNumber
 #TODO:直接取系统版本号判断，再检测文件是否存在，不符合都跳出
     read -p "输入服务器环境，2为国外(需要自行更换证书及pvf文件)，3为自带Server.tar.gz及证书及pvf文件(此项开始前要确保根目录下存在Server.tar.gz、publickey.pem、Script.pvf)，优先选3，然后回车：" networkState
     if (($versionNumber==5)); then
@@ -19,7 +19,7 @@ function install() {
         echo "其实只有5和6"
         exit 0
     fi
-    echo "添加交换空间，耐心等待⌛……"
+    echo "添加交换空间，耐心等待⌛……时间久，别着急!创神云维护QQ1805037552"
     addSwap
     installDOF
     deleteRoot6686
@@ -163,7 +163,7 @@ function deleteRoot6686() {
 }
 
 function removeTemp() {
-    echo -n -t 5 "完成安装，是否删除临时文件 y/n [n] ?"
+    echo -n -t 5 "完成安装，创神一条龙为您服务保驾护航！是否删除临时文件 y/n [n] ?"
     read ANS
     case $ANS in
     y|Y|yes|Yes)
@@ -182,5 +182,5 @@ function removeTemp() {
 install
 echo "***********************"
 echo " IP = ${IP}"
-echo "重启的话需要使用命令 service iptables stop 重新关闭防火墙"
+echo "搭建成功!Y有问题联系QQ1805037552.重启的话需要使用命令 service iptables stop 重新关闭防火墙"
 echo "***********************"
